@@ -1,0 +1,122 @@
+*{margin: 0px; padding: 0px;box-sizing: border-box;font-family: 'Ubuntu', sans-serif;}
+@import '_module.scss';
+header{
+    @include width-height(100%,9vh);
+    background-color: #222f3e;
+    figure{
+        @include display-justify-align(flex,none,center);
+        img{@include width-height(86px,62px)}
+        h2{color: white;}
+    }
+    @media only screen and (max-width: 1024px) {
+        figure{
+            @include display-justify-align(flex,center,center);
+            img{@include width-height(86px,62px)}
+            h2{color: white;}
+        }
+      }
+}
+main{
+    @include width-height(100%,91vh);
+    position: relative;
+    aside{
+        @include width-height(30%,90vh);
+        border-right: 2px solid #000;
+        position: absolute;
+        left: 0px;
+        overflow-y:auto ;
+        @media only screen and (max-width: 480px){
+            display: none;
+        }
+        h1{
+            width: 28%;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        #chatmember{
+            @include width-height(100%,90%);
+            .member{
+                @include width-height(100%,8vh);
+                @include display-justify-align(flex,center,center);
+                border: 1.5px solid #000;
+                border-right:none ;
+                img{
+                @include width-height(2.4vw,74%);
+                }
+                h1{
+                    @include width-height(86%,4vh)
+                }
+            }
+        }
+    }
+    section{
+        @include width-height(70%,90vh);
+        position: absolute;
+        right: 0px;
+        h1{
+            width: 12%;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        @media only screen and (max-width: 480px) {
+            width: 100%;
+            
+          }
+        #container{
+            @include width-height(100%,90%);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            .chat{
+                @include width-height(22vw,auto);
+                @include chatbox(5%,5px,10px,#8395a7);
+                box-shadow: 3px 5px 5px #000;
+                margin: 10px 0px;
+                @media only screen and (max-width: 480px) {
+                    width: 100%;
+                    
+                  }
+            }
+            .left{
+                align-self: flex-start;
+                @media only screen and (max-width: 480px) {
+                   width: 97%;
+                    
+                  }
+            }
+            .right{
+                align-self: flex-end;
+                @media only screen and (max-width: 480px) {
+                    width: 97%;
+                     
+                   }
+            }
+            .user-joined{
+                @include width-height(auto,auto);
+                @include mar-bor-pad(10px,14px,6px);
+                @include dis-pla(grid,center);
+                min-width:26%;
+                background-color: #00d2d3;
+                
+            }
+        }
+    }
+    #msg{
+        @include width-height(100%,5%);
+        #msg-box{
+            @include display-justify-align(flex,center,center);
+            #msg-input{
+                @include width-height(95%,10%);
+                padding: 7px;
+                border-radius: 10px;
+                outline: none;
+                border: 1.5px solid #000;
+            }
+        }
+        .btn{
+            @include width-height(4.5%,10%);
+            @include button(7px,4px,#ee5253,600,none);
+            border: 1px solid black;
+        }
+    }
+}
